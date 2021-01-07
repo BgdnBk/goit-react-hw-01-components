@@ -1,0 +1,26 @@
+.transactionHistory {
+  width: 900px;
+  margin: 0 auto;
+}
+
+tr {
+  height: 40px;
+}
+
+th {
+  font-size: 25px;
+  background-color: #00bcd5;
+  color: white;
+}
+
+td {
+  text-align: center;
+  font-size: 20px;
+
+  color: #7c8489;
+}
+
+tbody:nth-child(odd) {
+  color: white;
+  background-color: rgba(211, 211, 211, 0.34);
+}

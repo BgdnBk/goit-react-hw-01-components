@@ -1,6 +1,6 @@
 /* body {
   background-color: rgba(32, 33, 53, 0.842);
-}
+} */
 
 .profile {
   width: 300px;
@@ -8,9 +8,9 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
-    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset; */
+  border: 1px solid black;
   padding-top: 30px;
   padding-bottom: 15px;
 }
@@ -64,10 +64,11 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  /* height: 100px; */
   list-style: none;
   padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+  padding-top: 10px;
+  margin-bottom: 10px;
 }
 
 .liStyles {
@@ -81,4 +82,4 @@
 }
 .liStyles:not(:last-child) {
   margin-right: 35px;
-} */
+}
