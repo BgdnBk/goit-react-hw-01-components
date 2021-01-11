@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import Statistik from './StatisticsList';
 import s from './statistic.module.css';
 
-function StatisticList({ items, title }) {
+function StatisticList({ stats, title }) {
   return (
     <section className={s.statistics}>
       <h2 className={s.title}>{title ? title : ''}</h2>
       <ul className={s.statList}>
-        {items.map(item => (
-          <Statistik key={item.id} label={item.label} stats={item.percentage} />
+        {stats.map(stat => (
+          <Statistik key={stat.id} label={stat.label} stats={stat.percentage} />
         ))}
       </ul>
     </section>
@@ -20,7 +20,7 @@ function StatisticList({ items, title }) {
 export default StatisticList;
 
 StatisticList.propTypes = {
-  items: PropTypes.arrayOf(
+  stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
     }),

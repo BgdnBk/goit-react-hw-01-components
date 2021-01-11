@@ -20,7 +20,7 @@ export default function App() {
         // views={user.stats.views}
         // likes={user.stats.likes}
       />
-      <Statistics title="Upload stats" items={statisticalData} />
+      <Statistics title="Upload stats" stats={statisticalData} />
       <FriendList friends={friendsDate} />
       <TransactionHistory items={TransactionDate} />
     </div>
