@@ -1,28 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Statistik from './Statistik';
 import s from './statistic.module.css';
 
-function StatisticList({ items }) {
+export default function Statistics({ label, stats }) {
   return (
-    <section className={s.statistics}>
-      <h2 className={s.title}>UPLOAD STATS</h2>
-      <ul className={s.statList}>
-        {items.map(item => (
-          <Statistik key={item.id} label={item.label} stats={item.percentage} />
-        ))}
-      </ul>
-    </section>
+    <li
+      className={s.item}
+      style={{
+        backgroundColor: `rgba( ${random()} , ${random()} , ${random()} )`,
+      }}
+    >
+      <span className={s.label}>{label}</span>
+      <span className={s.percentage}> {stats}%</span>
+    </li>
   );
 }
 
-export default StatisticList;
+function random() {
+  return Math.floor(Math.random() * 256);
+}
 
-StatisticList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }),
-  ),
+Statistics.propTypes = {
+  label: PropTypes.string,
+  stats: PropTypes.number.isRequired,
 };

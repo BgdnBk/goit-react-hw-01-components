@@ -1,28 +1,28 @@
 import React from 'react';
-import Painting from './components/profile-social/profile';
+import Profile from './components/Profile/Profile';
 import user from './user.json';
-import StatisticsList from './components/statistic/statisticsList';
+import Statistics from './components/statistic/Statistics';
 import statisticalData from './statistical-data.json';
 import FriendList from './components/FriendList/FriendList';
 import friendsDate from './friends.json';
-import TransactionList from './components/transactionHistory/TransactionList';
+import TransactionHistory from './components/transactionHistory/TransactionHistory';
 import TransactionDate from './transactions.json';
 
 export default function App() {
   return (
     <div>
-      <Painting
+      <Profile
         name={user.name}
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
-        followers={user.stats.followers}
-        views={user.stats.views}
-        likes={user.stats.likes}
+        stats={user.stats}
+        // views={user.stats.views}
+        // likes={user.stats.likes}
       />
-      <StatisticsList items={statisticalData} />
+      <Statistics title="Upload stats" items={statisticalData} />
       <FriendList friends={friendsDate} />
-      <TransactionList items={TransactionDate} />
+      <TransactionHistory items={TransactionDate} />
     </div>
   );
 }

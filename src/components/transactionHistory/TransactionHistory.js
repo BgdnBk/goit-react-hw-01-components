@@ -1,21 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import TransactionList from './TransactionList';
 import s from './transaction.module.css';
 
-export default function TransactionHistory({ type, amount, currency }) {
+export default function TransactionHistory({ items }) {
   return (
-    <tbody>
-      <tr className={s.item}>
-        <td className={s.type}>{type}</td>
-        <td className={s.amount}>{amount}</td>
-        <td className={s.currency}>{currency}</td>
-      </tr>
-    </tbody>
+    <table className={s.transactionHistory}>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
+        </tr>
+      </thead>
+      {items.map(item => (
+        <tbody key={item.id}>
+          <tr className={s.item}>
+            <td className={s.type}>{item.type}</td>
+            <td className={s.amount}>{item.amount}</td>
+            <td className={s.currency}>{item.currency}</td>
+          </tr>
+        </tbody>
+        // <TransactionList
+        //   key={item.id}
+        //   type={item.type}
+        //   amount={item.amount}
+        //   currency={item.currency}
+        // />
+      ))}
+    </table>
   );
 }
 
 TransactionHistory.propTypes = {
-  type: PropTypes.string,
-  amount: PropTypes.string,
-  currency: PropTypes.string,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  ),
 };
